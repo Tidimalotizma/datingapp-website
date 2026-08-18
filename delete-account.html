@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Delete Account - TrueViewDating. Learn how to permanently delete your account and remove your personal data.">
+  <meta name="keywords" content="delete account, remove account, data deletion, TrueViewDating">
+  <meta name="theme-color" content="#8b5cf6">
+  
+  <title>Delete Account - TrueViewDating</title>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/style.css">
+  
+  <!-- Preconnect to external resources (if needed in future) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Delete Account Specific Styles -->
+  <style>
+    /* Delete Account Page Hero Section */
+    .delete-account-hero {
+      margin-top: 70px;
+      padding: var(--spacing-3xl) var(--spacing-md);
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+      position: relative;
+      overflow: hidden;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .delete-account-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 20s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    .delete-account-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -50%;
+      left: -50%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 25s ease-in-out infinite reverse;
+      z-index: 0;
+    }
+
+    .delete-account-hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 700px;
+    }
+
+    .delete-account-hero h1 {
+      font-size: var(--font-size-4xl);
+      margin-bottom: var(--spacing-md);
+      animation: slideInDown 0.8s ease-out;
+    }
+
+    @media (min-width: 768px) {
+      .delete-account-hero h1 {
+        font-size: var(--font-size-5xl);
+      }
+    }
+
+    .delete-account-hero-subtitle {
+      font-size: var(--font-size-lg);
+      color: var(--color-text-light);
+      margin-bottom: var(--spacing-xl);
+      animation: slideInUp 0.8s ease-out 0.2s both;
+      line-height: 1.8;
+    }
+
+    /* Delete Account Content Section */
+    .delete-account-content-section {
+      padding: var(--spacing-3xl) var(--spacing-md);
+      background: var(--color-white);
+    }
+
+    @media (min-width: 768px) {
+      .delete-account-content-section {
+        padding: var(--spacing-3xl) var(--spacing-lg);
+      }
+    }
+
+    .delete-account-content-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Info Box - Warning */
+    .delete-account-info-box {
+      background: rgba(239, 68, 68, 0.05);
+      border-left: 4px solid rgba(239, 68, 68, 0.8);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-lg) var(--spacing-xl);
+      margin-bottom: var(--spacing-2xl);
+      display: grid;
+      gap: var(--spacing-lg);
+    }
+
+    @media (min-width: 768px) {
+      .delete-account-info-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-2xl);
+      }
+    }
+
+    .delete-account-info-item h4 {
+      font-size: var(--font-size-base);
+      color: var(--color-text-light);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .delete-account-info-item p {
+      font-size: var(--font-size-lg);
+      color: var(--color-text-dark);
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+
+    /* Main Content Card - Glassmorphism */
+    .delete-account-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--radius-2xl);
+      padding: var(--spacing-2xl);
+      box-shadow: var(--shadow-glass);
+      margin-bottom: var(--spacing-2xl);
+    }
+
+    @media (min-width: 768px) {
+      .delete-account-card {
+        padding: var(--spacing-3xl);
+      }
+    }
+
+    /* Delete Account Content Typography */
+    .delete-account-card h2 {
+      font-size: var(--font-size-3xl);
+      color: var(--color-text-dark);
+      margin-bottom: var(--spacing-xl);
+      padding-bottom: var(--spacing-lg);
+      border-bottom: 2px solid rgba(139, 92, 246, 0.1);
+    }
+
+    .delete-account-card h3 {
+      font-size: var(--font-size-2xl);
+      color: var(--color-text-dark);
+      margin-top: var(--spacing-2xl);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .delete-account-card h3:first-child {
+      margin-top: 0;
+    }
+
+    .delete-account-card h4 {
+      font-size: var(--font-size-lg);
+      color: var(--color-text-dark);
+      font-weight: 600;
+      margin-top: var(--spacing-lg);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .delete-account-card p {
+      font-size: var(--font-size-base);
+      line-height: 1.8;
+      color: var(--color-text-light);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .delete-account-card ul,
+    .delete-account-card ol {
+      margin-bottom: var(--spacing-lg);
+      padding-left: var(--spacing-xl);
+    }
+
+    .delete-account-card li {
+      margin-bottom: var(--spacing-md);
+      color: var(--color-text-light);
+      line-height: 1.8;
+    }
+
+    .delete-account-card a {
+      color: var(--color-primary);
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid var(--color-primary);
+      transition: all var(--transition-base);
+    }
+
+    .delete-account-card a:hover {
+      color: var(--color-primary-dark);
+      border-bottom-color: var(--color-primary-dark);
+    }
+
+    /* Warning Message */
+    .delete-account-warning {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-lg) var(--spacing-xl);
+      margin: var(--spacing-2xl) 0;
+      border-left: 4px solid rgba(239, 68, 68, 0.8);
+    }
+
+    .delete-account-warning p {
+      margin-bottom: 0;
+      color: var(--color-text-dark);
+      font-weight: 500;
+    }
+
+    /* Last Updated Text */
+    .delete-account-last-updated {
+      text-align: center;
+      padding: var(--spacing-xl) var(--spacing-lg);
+      background: rgba(139, 92, 246, 0.05);
+      border-radius: var(--radius-lg);
+      margin-bottom: var(--spacing-2xl);
+    }
+
+    .delete-account-last-updated p {
+      color: var(--color-text-light);
+      font-size: var(--font-size-base);
+      margin-bottom: 0;
+    }
+
+    /* Back to Top Button - Floating */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+      color: var(--color-white);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+      transition: all var(--transition-base);
+      opacity: 0;
+      visibility: hidden;
+      z-index: 20;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(139, 92, 246, 0.4);
+    }
+
+    .back-to-top:active {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 640px) {
+      .back-to-top {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 20px;
+      }
+    }
+
+    /* Responsive Typography */
+    @media (max-width: 640px) {
+      .delete-account-card h2 {
+        font-size: 24px;
+      }
+
+      .delete-account-card h3 {
+        font-size: 20px;
+      }
+
+      .delete-account-hero h1 {
+        font-size: 32px;
+      }
+
+      .delete-account-hero-subtitle {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ================================================================
+       Navigation Bar - Sticky Header with Mobile Menu
+       ================================================================ -->
+  <nav class="navbar">
+    <div class="navbar-content container">
+      <!-- Logo -->
+      <div class="logo">TrueViewDating</div>
+
+      <!-- Mobile Menu Toggle (Hamburger) -->
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Navigation Menu -->
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="../index.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="privacy.html" class="nav-link">Privacy Policy</a>
+        </li>
+        <li class="nav-item">
+          <a href="terms.html" class="nav-link">Terms of Service</a>
+        </li>
+        <li class="nav-item">
+          <a href="community.html" class="nav-link">Community Guidelines</a>
+        </li>
+        <li class="nav-item">
+          <a href="delete-account.html" class="nav-link active">Delete Account</a>
+        </li>
+        <li class="nav-item">
+          <a href="support.html" class="nav-link">Support</a>
+        </li>
+        <li class="nav-item nav-cta">
+          <a href="../index.html#download" class="btn btn-primary">Download App</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ================================================================
+       Hero Section - Delete Account Title
+       ================================================================ -->
+  <section class="delete-account-hero">
+    <div class="delete-account-hero-content">
+      <h1>Delete Account</h1>
+      <p class="delete-account-hero-subtitle">
+        Learn how to permanently delete your TrueViewDating account and all associated data.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       Delete Account Content Section
+       ================================================================ -->
+  <section class="delete-account-content-section">
+    <div class="delete-account-content-wrapper">
+      
+      <!-- Account Info Box - Important Dates -->
+      <div class="delete-account-info-box">
+        <div class="delete-account-info-item">
+          <h4>Effective Date</h4>
+          <p>16 July 2026</p>
+        </div>
+        <div class="delete-account-info-item">
+          <h4>Last Updated</h4>
+          <p>16 July 2026</p>
+        </div>
+      </div>
+
+      <!-- Main Delete Account Card -->
+      <div class="delete-account-card">
+        <h2>Delete Your TrueViewDating Account</h2>
+
+        <h3>Overview</h3>
+        <p>
+          At <strong>TrueViewDating</strong>, we respect your right to control your personal information. If you no longer wish to use our services, you can permanently delete your account at any time.
+        </p>
+        <p><strong>Deleting your account is permanent and cannot be undone.</strong></p>
+
+        <h3>Option 1: Delete Your Account in the App</h3>
+        <p>If you can still access your account:</p>
+        <ol>
+          <li>Open the <strong>TrueViewDating</strong> app.</li>
+          <li>Sign in to your account.</li>
+          <li>Go to <strong>Profile</strong>.</li>
+          <li>Open <strong>Settings</strong>.</li>
+          <li>Select <strong>Delete Account</strong>.</li>
+          <li>Read the confirmation message.</li>
+          <li>Confirm your decision.</li>
+        </ol>
+        <p>Once confirmed, your account will be scheduled for permanent deletion.</p>
+
+        <h3>Option 2: Request Account Deletion by Email</h3>
+        <p>If you cannot access your account, you may request deletion by emailing:
+          <a href="mailto:trueviewdating@gmail.com">trueviewdating@gmail.com</a>
+        </p>
+        <p>To help us locate your account, please include:</p>
+        <ul>
+          <li>Your registered email address.</li>
+          <li>Your display name (if known).</li>
+          <li>A brief statement requesting account deletion.</li>
+        </ul>
+        <p>For your security, we may request additional information to verify that you are the account owner before processing your request.</p>
+
+        <h3>What Happens When You Delete Your Account?</h3>
+        <ul>
+          <li>Your profile will no longer be visible to other users.</li>
+          <li>Your profile photos will be removed.</li>
+          <li>Your profile videos will be removed.</li>
+          <li>Your matches will be removed.</li>
+          <li>Your conversations will no longer be accessible through your account.</li>
+          <li>Your face verification status and related verification data will be removed when no longer required for fraud prevention or legal compliance.</li>
+          <li>Your subscription will not automatically cancel. If you subscribed through the Google Play Store, you must cancel your subscription through your Google Play account to avoid future charges.</li>
+        </ul>
+
+        <h3>Information We May Retain</h3>
+        <p>In certain circumstances, we may retain limited information after account deletion where required to:</p>
+        <ul>
+          <li>Comply with applicable laws and regulations.</li>
+          <li>Resolve disputes.</li>
+          <li>Enforce our Terms of Service.</li>
+          <li>Prevent fraud and abuse.</li>
+          <li>Protect the safety and security of our users.</li>
+        </ul>
+        <p>Any retained information will be kept only for as long as necessary for these purposes.</p>
+
+        <h3>Processing Time</h3>
+        <p>We aim to process verified account deletion requests within <strong>30 days</strong>. Some information may remain in secure backups for a limited period before being permanently removed as part of our routine backup cycle.</p>
+
+        <h3>Before You Delete Your Account</h3>
+        <p>Please note that deleting your account is permanent. Once completed:</p>
+        <ul>
+          <li>Your profile cannot be restored.</li>
+          <li>Your matches cannot be recovered.</li>
+          <li>Your messages cannot be recovered.</li>
+          <li>Your uploaded photos and videos cannot be recovered.</li>
+          <li>You will need to create a new account if you wish to use TrueViewDating again.</li>
+        </ul>
+
+        <h3>Need Help?</h3>
+        <p>If you have questions about account deletion or require assistance, please contact us:</p>
+        <p>
+          <strong>Tidimalo Thobye</strong><br>
+          Pretoria, South Africa<br>
+          <a href="mailto:trueviewdating@gmail.com">trueviewdating@gmail.com</a>
+        </p>
+      </div>
+
+      <!-- Warning Box -->
+      <div class="delete-account-warning">
+        <p>⚠️ Important: Deleting your account is permanent and cannot be undone. All your profile data, messages, and matches will be permanently removed from our servers.</p>
+      </div>
+
+      <!-- Last Updated Text -->
+      <div class="delete-account-last-updated">
+        <p>Last reviewed on 16 July 2026.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================================
+       Back to Top Floating Button
+       ================================================================ -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    ↑
+  </button>
+
+  <!-- ================================================================
+       Footer - Contact & Legal Links
+       ================================================================ -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <!-- Brand Info -->
+        <div class="footer-section">
+          <h3>TrueViewDating</h3>
+          <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 20px;">
+            Real Videos. Real People. Real Connections.
+          </p>
+          <p style="color: rgba(255, 255, 255, 0.6); font-size: 14px;">
+            A modern dating platform dedicated to authentic connections through genuine 
+            video profiles.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <div class="footer-links">
+            <a href="../index.html" class="footer-link">Home</a>
+            <a href="privacy.html" class="footer-link">Privacy Policy</a>
+            <a href="terms.html" class="footer-link">Terms of Service</a>
+            <a href="community.html" class="footer-link">Community Guidelines</a>
+          </div>
+        </div>
+
+        <!-- Support -->
+        <div class="footer-section">
+          <h3>Support</h3>
+          <div class="footer-links">
+            <a href="support.html" class="footer-link">Help Center</a>
+            <a href="delete-account.html" class="footer-link">Delete Account</a>
+            <a href="mailto:trueviewdating@gmail.com" class="footer-link">Contact Us</a>
+            <a href="#" class="footer-link">Report an Issue</a>
+          </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <div class="footer-contact">
+            <span class="footer-contact-icon">📧</span>
+            <div>
+              <div style="color: rgba(255, 255, 255, 0.8); font-weight: 500;">Email</div>
+              <a href="mailto:trueviewdating@gmail.com" style="color: rgba(255, 255, 255, 0.7); text-decoration: none;">
+                trueviewdating@gmail.com
+              </a>
+            </div>
+          </div>
+          <div class="footer-contact">
+            <span class="footer-contact-icon">📍</span>
+            <div>
+              <div style="color: rgba(255, 255, 255, 0.8); font-weight: 500;">Location</div>
+              <div style="color: rgba(255, 255, 255, 0.7);">Pretoria, South Africa</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Divider -->
+      <div class="footer-divider"></div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          &copy; 2024 TrueViewDating. All rights reserved. | 
+          <a href="privacy.html" style="color: rgba(255, 255, 255, 0.7);">Privacy</a> | 
+          <a href="terms.html" style="color: rgba(255, 255, 255, 0.7);">Terms</a>
+        </div>
+        <div class="footer-socials">
+          <!-- Placeholder for social media links -->
+          <a href="#" aria-label="Facebook" style="color: rgba(255, 255, 255, 0.7); font-size: 20px;">f</a>
+          <a href="#" aria-label="Twitter" style="color: rgba(255, 255, 255, 0.7); font-size: 20px;">𝕏</a>
+          <a href="#" aria-label="Instagram" style="color: rgba(255, 255, 255, 0.7); font-size: 20px;">📷</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript - Enhanced with Back to Top and Active Link Handling -->
+  <script src="../js/script.js"></script>
+  <script>
+    /**
+     * Back to Top Button Functionality
+     */
+    const backToTopButton = document.getElementById('backToTop');
+
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+    });
+
+    // Scroll to top on button click
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Handle active navigation link
+    document.addEventListener('DOMContentLoaded', () => {
+      const navLinks = document.querySelectorAll('.nav-link');
+      const currentPage = window.location.pathname;
+      
+      navLinks.forEach(link => {
+        if (link.href.includes('delete-account.html')) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
